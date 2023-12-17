@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root,
+#root,
+#docs-root {
+  --bg-primary-color: #101010;
+  --bg-secondary-color: #1c1c1c;
+  --bg-hover-color: #3c3c3c;
+  --font-primary-color: #ffffff;
+  --font-secondary-color: #b6b6b6;
+}
+
+/* LIGHT */
+.root.light,
+#root.light,
+#docs-root.light {
+  --bg-primary-color: #f7efe5;
+  --bg-secondary-color: #fffbf5;
+  --bg-hover-color: #ded0b6;
+  --font-primary-color: #000000;
+  --font-secondary-color: #3d0c11;
+}
+
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  transition: background 0.4s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Lora", sans-serif;
+}
+
+pre {
+  font-family: "Lora", sans-serif;
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+}
+
+select {
+  cursor: pointer;
+}
+
+@layer base {
+  input[type="number"].appearance-none::-webkit-inner-spin-button,
+  input[type="number"].appearance-none::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"].appearance-none {
+    -moz-appearance: textfield;
+    appearance: none;
+  }
+}
+
+.swiper-button-next {
+  @apply text-[#b6b6b6];
+}
+
+.swiper-button-prev {
+  @apply text-[#b6b6b6];
+}
+
+.swiper-pagination-bullet {
+  @apply bg-[#b6b6b6];
+}
