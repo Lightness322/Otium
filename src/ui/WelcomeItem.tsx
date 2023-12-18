@@ -26,7 +26,7 @@ const WelcomeItem: React.FC<IWelcomeItemProps> = ({
     <div
       className={`relative w-[300px] cursor-pointer rounded-2xl border-solid border-[#b6b6b6] ${
         isHover ? "scale-110" : ""
-      } overflow-hidden shadow-[0px_10px_30px_5px_rgba(0,0,0,0.8)] transition-all max-[688px]:w-[250px]`}
+      } overflow-hidden shadow-[0px_10px_30px_0px_rgba(0,0,0,0.8)] transition-all max-[688px]:w-[250px]`}
       onClick={() => {
         if (list === false) navigate(`${to}`);
       }}

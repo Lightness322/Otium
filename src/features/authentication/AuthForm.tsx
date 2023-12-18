@@ -46,7 +46,8 @@ const AuthForm: React.FC<IAuthFormProps> = ({
 
   return (
     <form
-      className="absolute left-[calc(50%-250px)] top-[calc(50%-171px)] w-[500px] rounded-3xl border-solid border-font-secondary-color bg-secondary-color p-10 shadow-[0px_10px_30px_5px_rgba(0,0,0,0.8)]"
+      className="w-[500px] rounded-3xl border-solid border-font-secondary-color bg-secondary-color p-10 shadow-[0px_10px_30px_5px_rgba(0,0,0,0.8)] max-[550px]:w-[90%] max-[450px]:px-4 max-[450px]:py-8"
+      onClick={(e) => e.stopPropagation()}
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="mb-8 flex flex-col gap-y-8">

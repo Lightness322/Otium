@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { LegacyRef, useEffect, useRef } from "react";
 
-export const useOutsideClick = (callback: () => void) => {
-  const refBtn = useRef<HTMLLinkElement>(null);
+export const useOutsideClick = (state: boolean, callback: () => void) => {
+  const refBtn: LegacyRef<HTMLButtonElement> = useRef(null);
 
   const refMenu = useRef<HTMLUListElement>(null);
 
@@ -11,7 +11,17 @@ export const useOutsideClick = (callback: () => void) => {
         event.target instanceof Element &&
         refMenu.current &&
         !refMenu.current.contains(event.target as Node) &&
-        event.target !== refBtn.current
+        event.target !== refBtn.current?.closest("button") &&
+        state === true
+      ) {
+        callback();
+      }
+      if (
+        event.target instanceof Element &&
+        refMenu.current &&
+        !refMenu.current.contains(event.target as Node) &&
+        (event.target === refBtn.current ||
+          event.target === refBtn.current?.closest("button"))
       ) {
         callback();
       }
@@ -22,7 +32,7 @@ export const useOutsideClick = (callback: () => void) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [callback]);
+  }, [callback, state]);
 
   return { refBtn, refMenu };
 };

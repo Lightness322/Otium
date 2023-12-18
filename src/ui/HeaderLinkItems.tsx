@@ -14,14 +14,17 @@ const HeaderLinkItems: React.FC = () => {
 
   const { userId } = useAppSelector((state) => state.userSliceReducer);
 
-  const { refBtn, refMenu } = useOutsideClick(handleListMenu);
+  const { refBtn, refMenu } = useOutsideClick(isShowMenu, handleShowMenu);
 
   function handleListMenu() {
     setIsListLinkHover((isHover) => !isHover);
   }
 
   function handleShowMenu() {
-    setIsShowMenu((isShow) => !isShow);
+    setIsShowMenu((isShow) => {
+      setIsListLinkHover(false);
+      return !isShow;
+    });
   }
 
   return (
@@ -32,6 +35,7 @@ const HeaderLinkItems: React.FC = () => {
             className={`left-[100%] top-[70px] flex grow justify-evenly font-medium transition-all duration-300 max-md:fixed max-md:w-[160px] max-md:flex-col max-md:gap-y-4 max-md:rounded-bl-3xl max-md:border-0 max-md:border-t-[1px] max-md:border-solid max-md:border-black max-md:bg-primary-color max-md:p-4 ${
               isShowMenu ? "-translate-x-[160px]" : "translate-x-0"
             }`}
+            ref={refMenu}
           >
             <HeaderLinkItem to="movies">
               <span
@@ -53,15 +57,10 @@ const HeaderLinkItems: React.FC = () => {
             </HeaderLinkItem>
             <div className="relative">
               <HeaderLinkItem to="list" prevent={true}>
-                <span onClick={handleListMenu} ref={refBtn} className="active">
-                  Список
-                </span>
+                <button onClick={handleListMenu}>Список</button>
               </HeaderLinkItem>
               <CSSTransitionWrapper isShow={isListLinkHover}>
-                <ul
-                  className="absolute bottom-[-75px] left-[-24px] -z-10 flex w-[120px] animate-show justify-between gap-x-2 rounded-b-md bg-primary-color p-3 [border-top:_1px_solid_#000] max-md:static max-md:animate-none"
-                  ref={refMenu}
-                >
+                <ul className="absolute bottom-[-75px] left-[-24px] -z-10 flex w-[120px] animate-show justify-between gap-x-2 rounded-b-md bg-primary-color p-3 [border-top:_1px_solid_#000] max-md:static max-md:animate-none">
                   <HeaderLinkItem to="list/movies">
                     <span
                       onClick={() => {
@@ -86,10 +85,7 @@ const HeaderLinkItems: React.FC = () => {
               </CSSTransitionWrapper>
             </div>
           </ul>
-          <HeaderMenuButton
-            handleShowMenu={handleShowMenu}
-            isShowMenu={isShowMenu}
-          />
+          <HeaderMenuButton isShowMenu={isShowMenu} refBtn={refBtn} />
         </>
       )}
     </>

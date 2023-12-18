@@ -21,8 +21,8 @@ const AuthFormInput: React.FC<IAuthFormInputProps> = ({
   formValue,
 }) => {
   return (
-    <label className="relative grid grid-cols-[120px,_1fr] items-center">
-      <span className="text-xl font-semibold">{label}</span>
+    <label className="relative grid grid-cols-[100px,_1fr] items-center max-[450px]:grid-cols-[92px,_1fr]">
+      <span className="text-xl font-semibold max-[450px]:text-lg">{label}</span>
       <input
         className="w-[100%] rounded-md bg-hover-color p-2"
         type={formValue === "password" ? "password" : "text"}

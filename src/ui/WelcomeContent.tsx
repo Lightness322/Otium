@@ -14,7 +14,7 @@ const WelcomeContent: React.FC<IWelcomeContentProps> = ({
   setIsModalActive,
 }) => {
   return (
-    <div className="flex h-[calc(100vh-200px)] flex-col items-center justify-center gap-y-14 max-lg:mt-10 max-[563px]:mt-0 max-[563px]:h-full max-[563px]:gap-y-6">
+    <div className="flex h-[calc(100vh-200px)] flex-col items-center justify-center gap-y-14 max-lg:mt-10 max-[1023px]:gap-y-6">
       <WelcomeTitles />
       {userId ? (
         <div className="flex h-[225px] w-full justify-around gap-12 max-lg:h-[490px] max-lg:flex-wrap max-lg:justify-center max-[688px]:h-[380px] max-[688px]:gap-6 max-[563px]:h-[540px]">
@@ -25,7 +25,7 @@ const WelcomeContent: React.FC<IWelcomeContentProps> = ({
       ) : (
         <div className="flex flex-col items-center">
           <Button
-            className="rounded-lg p-3 text-xl font-bold text-font-secondary-color outline outline-[font-secondary-color] hover:bg-font-secondary-color hover:text-secondary-color"
+            className="rounded-lg p-3 text-xl font-bold text-font-secondary-color outline outline-[font-secondary-color] hover:bg-font-secondary-color hover:text-secondary-color max-[563px]:p-2 max-[563px]:text-lg"
             onClick={() => setIsModalActive(true)}
             bg={false}
           >

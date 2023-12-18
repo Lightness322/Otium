@@ -23,14 +23,12 @@ const AuthModal: React.FC<IAuthModalProps> = ({
         setIsRegister(false);
       }}
     >
-      <div onClick={(e) => e.stopPropagation()}>
-        <AuthForm
-          isRegister={isRegister}
-          setIsRegister={setIsRegister}
-          isModalActive={isModalActive}
-          setIsModalActive={setIsModalActive}
-        />
-      </div>
+      <AuthForm
+        isRegister={isRegister}
+        setIsRegister={setIsRegister}
+        isModalActive={isModalActive}
+        setIsModalActive={setIsModalActive}
+      />
     </div>
   );
 };

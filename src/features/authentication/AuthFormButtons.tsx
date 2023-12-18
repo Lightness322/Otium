@@ -25,7 +25,7 @@ export const AuthFormButtons: React.FC<IAuthFormButtonsProps> = ({
       {!isRegister ? (
         <>
           <Button
-            className="rounded-lg bg-primary-color p-3 text-2xl font-bold hover:outline hover:outline-font-secondary-color"
+            className="rounded-lg bg-primary-color p-3 text-2xl font-bold hover:outline hover:outline-font-secondary-color max-[450px]:text-xl"
             type="submit"
             disabled={status === "pending"}
             bg={false}
@@ -37,7 +37,7 @@ export const AuthFormButtons: React.FC<IAuthFormButtonsProps> = ({
             )}
           </Button>
           <Button
-            className="rounded-lg bg-font-secondary-color p-3 text-2xl font-bold hover:outline hover:outline-font-primary-color"
+            className="rounded-lg bg-font-secondary-color p-3 text-2xl font-bold hover:outline hover:outline-font-primary-color max-[450px]:text-xl"
             onClick={() => {
               dispatch(setIdleUserStatus());
               setIsRegister(true);
@@ -51,7 +51,7 @@ export const AuthFormButtons: React.FC<IAuthFormButtonsProps> = ({
         </>
       ) : (
         <Button
-          className="animate-show rounded-lg bg-font-secondary-color p-3 text-2xl font-bold hover:outline hover:outline-font-primary-color"
+          className="animate-show rounded-lg bg-font-secondary-color p-3 text-2xl font-bold hover:outline hover:outline-font-primary-color max-[450px]:text-xl"
           type="submit"
           disabled={status === "pending"}
           bg={false}

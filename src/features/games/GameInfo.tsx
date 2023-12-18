@@ -15,7 +15,7 @@ const GameInfo: React.FC<IGameInfoProps> = ({ gameDetails, gameStores }) => {
 
   return (
     <div className="flex flex-col text-white">
-      <div className="flex justify-between gap-x-2 max-[520px]:flex-col-reverse max-[520px]:gap-y-5">
+      <div className="flex justify-between gap-x-2 max-[520px]:flex-col-reverse max-[520px]:gap-y-2">
         <div className="text-4xl font-semibold max-md:text-3xl max-[603px]:text-2xl">
           {name}
         </div>
