@@ -28,9 +28,9 @@ const GameDetails: React.FC = () => {
 
   return (
     <div>
-      <img
-        className="fixed left-0 top-[70px] -z-10 h-full w-screen object-cover brightness-[20%] contrast-[80%] filter"
-        src={`${background_image}`}
+      <div
+        style={{ backgroundImage: `url(${background_image})` }}
+        className="fixed left-0 top-[70px] -z-50 h-screen w-screen bg-cover bg-top bg-no-repeat brightness-[20%] contrast-[80%] filter"
       />
       <div className="flex flex-col gap-y-5 max-[603px]:gap-y-2">
         <GameInfo gameDetails={gameDetails} gameStores={gameStores} />
