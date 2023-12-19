@@ -24,11 +24,10 @@ const GameDetails: React.FC = () => {
 
   if (errorMessage) return <ErrorMessage>{errorMessage}</ErrorMessage>;
 
+  console.log(background_image);
+
   return (
     <div>
-      <div
-        className={`h-full w-screen bg-[url(${background_image})] fixed left-0 top-0 -z-50 object-cover brightness-[20%] contrast-[80%] filter`}
-      ></div>
       <img
         className="fixed left-0 top-[70px] -z-10 h-full w-screen object-cover brightness-[20%] contrast-[80%] filter"
         src={`${background_image}`}
