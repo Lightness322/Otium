@@ -46,7 +46,7 @@ const AuthForm: React.FC<IAuthFormProps> = ({
 
   return (
     <form
-      className="w-[500px] rounded-3xl border-solid border-font-secondary-color bg-secondary-color p-10 shadow-[0px_10px_30px_5px_rgba(0,0,0,0.8)] max-[550px]:w-[90%] max-[450px]:px-4 max-[450px]:py-8"
+      className="relative w-[500px] rounded-3xl border-solid border-font-secondary-color bg-secondary-color p-10 shadow-[0px_10px_30px_5px_rgba(0,0,0,0.8)] max-[550px]:w-[90%] max-[450px]:px-4 max-[450px]:py-8"
       onClick={(e) => e.stopPropagation()}
       onSubmit={handleSubmit(onSubmit)}
     >
@@ -72,9 +72,9 @@ const AuthForm: React.FC<IAuthFormProps> = ({
           register={register}
         />
       </div>
-      <div className="absolute bottom-2 left-0 w-full text-center text-[15px] text-red-600">
+      <div className="absolute bottom-[10px] left-0 w-full text-center text-sm text-red-600">
         {status === "failed" && isRegister && (
-          <span>Пользователь с данной почтой уже существует</span>
+          <span>Такой пользователь уже существует</span>
         )}
         {status === "failed" && !isRegister && (
           <span>Неверная почта или пароль</span>

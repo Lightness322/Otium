@@ -6,7 +6,7 @@ import { fetchViewedMovies } from "../store/moviesReducers/ActionCreatotsViewedM
 import { fetchPlayedGames } from "../store/gamesReducers/ActionCreatorsPlayedGames";
 import { fetchWishlistGames } from "../store/wishlistReducers/ActionCreatorsWishlistGames";
 
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import Header from "./Header";
 import Container from "./Container";
 
@@ -14,6 +14,8 @@ export default function AppLayout() {
   const { userId } = useAppSelector((state) => state.userSliceReducer);
 
   const dispatch = useAppDispatch();
+
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (userId !== null) {
@@ -23,6 +25,10 @@ export default function AppLayout() {
       dispatch(fetchPlayedGames(userId));
     }
   }, [dispatch, userId]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="absolute z-50 flex min-h-screen w-full flex-col bg-secondary-color text-font-primary-color">

@@ -16,7 +16,7 @@ const Movies: React.FC = () => {
   return (
     <div className="flex flex-col gap-y-4">
       <MoviesSearchAndFilters inView={inView} />
-      <NoneResults items={movies} isLoading={isLoading} />
+      <NoneResults items={movies} isLoading={isLoading} type="movie" />
       <MoviesItems />
       {movies.length > 0 && totalPages > currentPage && (
         <ItemsLoader propRef={inViewRef} />

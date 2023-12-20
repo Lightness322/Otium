@@ -28,7 +28,7 @@ const MovieItem: React.FC<IMovieItemProps> = ({ movie }) => {
 
   return (
     <div
-      className="w-[206px] rounded-md p-3 hover:cursor-pointer hover:bg-hover-color max-[863px]:w-[180px] max-[579px]:w-[150px] max-[489px]:w-[180px]"
+      className="w-[206px] rounded-md p-3 hover:cursor-pointer hover:bg-hover-color max-[863px]:w-[180px] max-[579px]:w-[150px] max-[489px]:w-[180px] max-[399px]:w-[200px]"
       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target instanceof Element && !e.target.closest("button")) {
           navigate(`${movieId}`);
@@ -43,7 +43,7 @@ const MovieItem: React.FC<IMovieItemProps> = ({ movie }) => {
         <img
           className={`h-[calc((206-24)*1.5px)] w-full object-cover ${
             isHover ? "brightness-[35%] contrast-[70%] filter" : ""
-          } max-[863px]:h-[calc((180-24)*1.5px)] max-[579px]:h-[calc((150-24)*1.5px)] max-[489px]:h-[calc((180-24)*1.5px)]`}
+          } max-[863px]:h-[calc((180-24)*1.5px)] max-[579px]:h-[calc((150-24)*1.5px)] max-[489px]:h-[calc((180-24)*1.5px)] max-[399px]:h-[calc((200-24)*1.5px)]`}
           src={`${posterUrl}`}
         />
         <MovieItemRatings

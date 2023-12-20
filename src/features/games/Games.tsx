@@ -16,7 +16,7 @@ const Games: React.FC = () => {
   return (
     <div className="flex flex-col gap-y-4">
       <GamesSearchAndFilters inView={inView} />
-      <NoneResults items={games} isLoading={isLoading} />
+      <NoneResults items={games} isLoading={isLoading} type="game" />
       <GamesItems games={games} error={error} isLoading={isLoading} />
       {games.length > 0 && totalPages > currentPage && (
         <ItemsLoader propRef={inViewRef} />

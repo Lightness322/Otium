@@ -24,8 +24,6 @@ const GameDetails: React.FC = () => {
 
   if (errorMessage) return <ErrorMessage>{errorMessage}</ErrorMessage>;
 
-  console.log(background_image);
-
   return (
     <div>
       <div

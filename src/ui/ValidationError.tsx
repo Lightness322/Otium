@@ -4,7 +4,7 @@ interface IValidationErrorProps {
 
 const ValidationError: React.FC<IValidationErrorProps> = ({ children }) => {
   return (
-    <div className="absolute bottom-[-27px] left-[120px] text-[15px] text-red-600">
+    <div className="absolute bottom-[-25px] left-[105px] text-sm text-red-600 max-[519px]:left-[0]">
       {children}
     </div>
   );

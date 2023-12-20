@@ -26,7 +26,10 @@ const router = createBrowserRouter([
       { path: "movies/:movieId", element: <MovieDetailsPage /> },
       { path: "movies/person/:personId", element: <PersonPage /> },
       { path: "games", element: <GamesPage /> },
-      { path: "games/:gameId", element: <GameDetails /> },
+      {
+        path: "games/:gameId",
+        element: <GameDetails />,
+      },
       { path: "games/developer/:developerId", element: <DeveloperPage /> },
       { path: "list/movies", element: <WishlistMovies /> },
       { path: "list/games", element: <WishlistGames /> },
