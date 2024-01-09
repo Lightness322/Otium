@@ -14,7 +14,10 @@ export function useAuthFormSubmit(isRegister: boolean) {
     register,
     formState: { errors },
     reset,
-  } = useForm<IAuthFormData>({ mode: "onBlur" });
+  } = useForm<IAuthFormData>({
+    mode: "all",
+    defaultValues: { email: "test@mail.ru", password: "test11" },
+  });
 
   const dispatch = useAppDispatch();
 

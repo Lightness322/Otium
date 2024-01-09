@@ -25,7 +25,7 @@ const WishlistMovieItem: React.FC<IWishlistMovieItemProps> = ({ movie }) => {
       }}
     >
       <img
-        className="h-full max-h-full cursor-pointer object-cover"
+        className="h-[176px] w-[126px] cursor-pointer object-cover max-[1210px]:h-[236px] max-[1210px]:w-[162px] max-[970px]:h-[176px] max-[970px]:w-[126px] max-[710px]:w-[122px]"
         src={`${posterUrl}`}
       />
       <div className="flex w-full flex-col">
